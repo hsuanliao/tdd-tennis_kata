@@ -36,22 +36,13 @@ namespace TennisTest20220122
             {
                 if (IsReadForGamePoint())
                 {
-                    if (IsAdv())
-                    {
-                        return $"{AdvPlayer()} Adv.";
-                    }
-
-                    return $"{AdvPlayer()} Win.";
+                    return IsAdv() ? $"{AdvPlayer()} Adv." : $"{AdvPlayer()} Win.";
                 }
 
                 return LookupScore();
             }
 
-            if (IsDeuce())
-            {
-                return Deuce();
-            }
-            return SameScore();
+            return IsDeuce() ? Deuce() : SameScore();
         }
 
         public void SecondPlayerScore()
