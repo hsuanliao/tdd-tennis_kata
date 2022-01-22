@@ -4,6 +4,8 @@ namespace TennisTest20220122
 {
     public class TennisGame
     {
+        private readonly string _firstPlayerName;
+
         private readonly Dictionary<int, string> _scoreLookup = new Dictionary<int, string>
         {
             { 0, "Love" },
@@ -14,6 +16,11 @@ namespace TennisTest20220122
 
         private int _firstPlayerScoreTimes;
         private int _secondPlayerScoreTimes;
+
+        public TennisGame(string firstPlayerName)
+        {
+            _firstPlayerName = firstPlayerName;
+        }
 
         public void FirstPlayerScore()
         {
