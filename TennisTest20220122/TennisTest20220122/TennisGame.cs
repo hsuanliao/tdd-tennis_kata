@@ -22,17 +22,32 @@ namespace TennisTest20220122
 
         public string ScoreResult()
         {
-            if (_firstPlayerScoreTimes != _secondPlayerScoreTimes)
+            if (IsDifferentScore())
             {
-                return $"{_scoreLookup[_firstPlayerScoreTimes]} {_scoreLookup[_secondPlayerScoreTimes]}";
+                return LookupScore();
             }
 
-            return $"{_scoreLookup[_firstPlayerScoreTimes]} All";
+            return SameScore();
         }
 
         public void SecondPlayerScore()
         {
             _secondPlayerScoreTimes++;
+        }
+
+        private bool IsDifferentScore()
+        {
+            return _firstPlayerScoreTimes != _secondPlayerScoreTimes;
+        }
+
+        private string LookupScore()
+        {
+            return $"{_scoreLookup[_firstPlayerScoreTimes]} {_scoreLookup[_secondPlayerScoreTimes]}";
+        }
+
+        private string SameScore()
+        {
+            return $"{_scoreLookup[_firstPlayerScoreTimes]} All";
         }
     }
 }
