@@ -126,6 +126,18 @@ namespace TennisTest20220122
             ScoreResultShouldBe("Kevin Win.");
         }
 
+        [Test]
+        [TestCase(0, 2, "Love Thirty")]
+        [TestCase(3, 1, "Forty Fifteen")]
+        [TestCase(4, 2, "Jay Win.")]
+        [TestCase(1, 4, "Kevin Win.")]
+        public void A99_Others(int firstPlayerScore, int secondPlayerScore, string expected)
+        {
+            GivenFirstPlayerScoreTimes(firstPlayerScore);
+            GivenSecondPlayerScoreTimes(secondPlayerScore);
+            ScoreResultShouldBe(expected);
+        }
+
         private void GivenDeuce()
         {
             GivenFirstPlayerScoreTimes(3);
