@@ -27,7 +27,7 @@ namespace TennisTest20220122
                 return LookupScore();
             }
 
-            if (_firstPlayerScoreTimes == 3)
+            if (_firstPlayerScoreTimes >= 3)
             {
                 return "Deuce";
             }
