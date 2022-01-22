@@ -8,6 +8,7 @@ namespace TennisTest20220122
         {
             { 1, "Fifteen" },
             { 2, "Thirty" },
+            { 3, "Forty" },
         };
 
         private int _firstPlayerScoreTimes;
@@ -19,7 +20,7 @@ namespace TennisTest20220122
 
         public string ScoreResult()
         {
-            if (_firstPlayerScoreTimes == 1 || _firstPlayerScoreTimes == 2)
+            if (_firstPlayerScoreTimes > 0)
             {
                 return $"{_scoreLookup[_firstPlayerScoreTimes]} Love";
             }
