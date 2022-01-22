@@ -41,6 +41,13 @@ namespace TennisTest20220122
             ScoreResultShouldBe("Forty Love");
         }
 
+        [Test]
+        public void A05_Love_Fifteen()
+        {
+            _tennisGame.SecondPlayerScore();
+            ScoreResultShouldBe("Love Fifteen");
+        }
+
         private void GivenFirstPlayerScoreTimes(int times)
         {
             for (var i = 0; i < times; i++)

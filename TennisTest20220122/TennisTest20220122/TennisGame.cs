@@ -27,5 +27,10 @@ namespace TennisTest20220122
 
             return "Love All";
         }
+
+        public void SecondPlayerScore()
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
