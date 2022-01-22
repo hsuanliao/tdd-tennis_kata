@@ -44,7 +44,7 @@ namespace TennisTest20220122
         [Test]
         public void A05_Love_Fifteen()
         {
-            _tennisGame.SecondPlayerScore();
+            GivenSecondPlayerScoreTimes(1);
             ScoreResultShouldBe("Love Fifteen");
         }
 
@@ -53,6 +53,14 @@ namespace TennisTest20220122
             for (var i = 0; i < times; i++)
             {
                 _tennisGame.FirstPlayerScore();
+            }
+        }
+
+        private void GivenSecondPlayerScoreTimes(int times)
+        {
+            for (var i = 0; i < times; i++)
+            {
+                _tennisGame.SecondPlayerScore();
             }
         }
 
