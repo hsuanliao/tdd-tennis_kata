@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 
 namespace TennisTest20220122
 {
@@ -33,11 +34,14 @@ namespace TennisTest20220122
         {
             if (IsDifferentScore())
             {
-                if (_firstPlayerScoreTimes > 3)
+                if (_firstPlayerScoreTimes > 3 || _secondPlayerScoreTimes > 3)
                 {
-                    if (_firstPlayerScoreTimes - _secondPlayerScoreTimes == 1)
+                    if (Math.Abs(_firstPlayerScoreTimes - _secondPlayerScoreTimes) == 1)
                     {
-                        return $"{_firstPlayerName} Adv.";
+                        var advPlayerName = _firstPlayerScoreTimes > _secondPlayerScoreTimes
+                            ? _firstPlayerName
+                            : _secondPlayerName;
+                        return $"{advPlayerName} Adv.";
                     }
                 }
 
