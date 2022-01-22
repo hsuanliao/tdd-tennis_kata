@@ -34,6 +34,13 @@ namespace TennisTest20220122
             ScoreResultShouldBe("Thirty Love");
         }
 
+        [Test]
+        public void A04_Forty_Love()
+        {
+            GivenFirstPlayerScoreTimes(3);
+            ScoreResultShouldBe("Forty Love");
+        }
+
         private void GivenFirstPlayerScoreTimes(int times)
         {
             for (var i = 0; i < times; i++)
