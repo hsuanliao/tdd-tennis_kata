@@ -12,6 +12,7 @@ namespace TennisTest20220122
         };
 
         private int _firstPlayerScoreTimes;
+        private int _secondPlayerScoreTimes;
 
         public void FirstPlayerScore()
         {
@@ -20,6 +21,10 @@ namespace TennisTest20220122
 
         public string ScoreResult()
         {
+            if (_secondPlayerScoreTimes == 1)
+            {
+                return "Love Fifteen";
+            }
             if (_firstPlayerScoreTimes > 0)
             {
                 return $"{_scoreLookup[_firstPlayerScoreTimes]} Love";
@@ -30,7 +35,7 @@ namespace TennisTest20220122
 
         public void SecondPlayerScore()
         {
-            throw new System.NotImplementedException();
+            _secondPlayerScoreTimes++;
         }
     }
 }
