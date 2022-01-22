@@ -23,16 +23,23 @@ namespace TennisTest20220122
         [Test]
         public void A02_Fifteen_Love()
         {
-            _tennisGame.FirstPlayerScore();
+            GivenFirstPlayerScoreTimes(1);
             ScoreResultShouldBe("Fifteen Love");
         }
 
         [Test]
         public void A03_Thirty_Love()
         {
-            _tennisGame.FirstPlayerScore();
-            _tennisGame.FirstPlayerScore();
+            GivenFirstPlayerScoreTimes(2);
             ScoreResultShouldBe("Thirty Love");
+        }
+
+        private void GivenFirstPlayerScoreTimes(int times)
+        {
+            for (var i = 0; i < times; i++)
+            {
+                _tennisGame.FirstPlayerScore();
+            }
         }
 
         private void ScoreResultShouldBe(string expected)
