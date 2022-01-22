@@ -35,7 +35,7 @@ namespace TennisTest20220122
                 {
                     if (_firstPlayerScoreTimes - _secondPlayerScoreTimes == 1)
                     {
-                        return "Jay Adv.";
+                        return $"{_firstPlayerName} Adv.";
                     }
                 }
 
