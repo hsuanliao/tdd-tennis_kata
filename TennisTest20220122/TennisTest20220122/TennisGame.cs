@@ -1,7 +1,15 @@
-﻿namespace TennisTest20220122
+﻿using System.Collections.Generic;
+
+namespace TennisTest20220122
 {
     public class TennisGame
     {
+        private readonly Dictionary<int, string> _scoreLookup = new Dictionary<int, string>
+        {
+            { 1, "Fifteen" },
+            { 2, "Thirty" },
+        };
+
         private int _firstPlayerScoreTimes;
 
         public void FirstPlayerScore()
@@ -11,13 +19,9 @@
 
         public string ScoreResult()
         {
-            if (_firstPlayerScoreTimes == 1)
+            if (_firstPlayerScoreTimes == 1 || _firstPlayerScoreTimes == 2)
             {
-                return "Fifteen Love";
-            }
-            if (_firstPlayerScoreTimes == 2)
-            {
-                return "Thirty Love";
+                return $"{_scoreLookup[_firstPlayerScoreTimes]} Love";
             }
 
             return "Love All";
