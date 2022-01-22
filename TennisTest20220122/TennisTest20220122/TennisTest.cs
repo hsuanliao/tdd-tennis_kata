@@ -70,6 +70,14 @@ namespace TennisTest20220122
             ScoreResultShouldBe("Fifteen All");
         }
 
+        [Test]
+        public void A09_Thirty_All()
+        {
+            GivenFirstPlayerScoreTimes(2);
+            GivenSecondPlayerScoreTimes(2);
+            ScoreResultShouldBe("Thirty All");
+        }
+
         private void GivenFirstPlayerScoreTimes(int times)
         {
             for (var i = 0; i < times; i++)
