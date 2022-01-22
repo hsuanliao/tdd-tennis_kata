@@ -34,17 +34,14 @@ namespace TennisTest20220122
         {
             if (IsDifferentScore())
             {
-                if (_firstPlayerScoreTimes > 3 || _secondPlayerScoreTimes > 3)
+                if (IsReadForGamePoint())
                 {
-                    var advPlayerName = _firstPlayerScoreTimes > _secondPlayerScoreTimes
-                        ? _firstPlayerName
-                        : _secondPlayerName;
-                    if (Math.Abs(_firstPlayerScoreTimes - _secondPlayerScoreTimes) == 1)
+                    if (IsAdv())
                     {
-                        return $"{advPlayerName} Adv.";
+                        return $"{AdvPlayer()} Adv.";
                     }
 
-                    return $"{advPlayerName} Win.";
+                    return $"{AdvPlayer()} Win.";
                 }
 
                 return LookupScore();
@@ -67,6 +64,19 @@ namespace TennisTest20220122
             return "Deuce";
         }
 
+        private string AdvPlayer()
+        {
+            var advPlayerName = _firstPlayerScoreTimes > _secondPlayerScoreTimes
+                ? _firstPlayerName
+                : _secondPlayerName;
+            return advPlayerName;
+        }
+
+        private bool IsAdv()
+        {
+            return Math.Abs(_firstPlayerScoreTimes - _secondPlayerScoreTimes) == 1;
+        }
+
         private bool IsDeuce()
         {
             return _firstPlayerScoreTimes == _secondPlayerScoreTimes
@@ -76,6 +86,11 @@ namespace TennisTest20220122
         private bool IsDifferentScore()
         {
             return _firstPlayerScoreTimes != _secondPlayerScoreTimes;
+        }
+
+        private bool IsReadForGamePoint()
+        {
+            return _firstPlayerScoreTimes > 3 || _secondPlayerScoreTimes > 3;
         }
 
         private string LookupScore()
