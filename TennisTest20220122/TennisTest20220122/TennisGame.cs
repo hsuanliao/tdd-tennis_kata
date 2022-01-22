@@ -31,6 +31,14 @@ namespace TennisTest20220122
         {
             if (IsDifferentScore())
             {
+                if (_firstPlayerScoreTimes > 3)
+                {
+                    if (_firstPlayerScoreTimes - _secondPlayerScoreTimes == 1)
+                    {
+                        return "Jay Adv.";
+                    }
+                }
+
                 return LookupScore();
             }
 
