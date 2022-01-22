@@ -20,6 +20,13 @@ namespace TennisTest20220122
             ScoreResultShouldBe("Love All");
         }
 
+        [Test]
+        public void A02_Fifteen_Love()
+        {
+            _tennisGame.FirstPlayerScore();
+            ScoreResultShouldBe("Fifteen Love");
+        }
+
         private void ScoreResultShouldBe(string expected)
         {
             _tennisGame.ScoreResult().Should().Be(expected);

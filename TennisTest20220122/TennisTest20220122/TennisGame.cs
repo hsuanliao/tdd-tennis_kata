@@ -2,6 +2,11 @@
 {
     public class TennisGame
     {
+        public void FirstPlayerScore()
+        {
+            throw new System.NotImplementedException();
+        }
+
         public string ScoreResult()
         {
             return "Love All";
