@@ -11,7 +11,7 @@ namespace TennisTest20220122
         [SetUp]
         public void _00_SetUp()
         {
-            _tennisGame = new TennisGame("Jay");
+            _tennisGame = new TennisGame("Jay", "Kevin");
         }
 
         [Test]
@@ -100,6 +100,14 @@ namespace TennisTest20220122
             GivenDeuce();
             GivenFirstPlayerScoreTimes(1);
             ScoreResultShouldBe("Jay Adv.");
+        }
+
+        [Test]
+        public void A13_SecondPlayer_Adv()
+        {
+            GivenDeuce();
+            GivenSecondPlayerScoreTimes(1);
+            ScoreResultShouldBe("Kevin Adv.");
         }
 
         private void GivenDeuce()

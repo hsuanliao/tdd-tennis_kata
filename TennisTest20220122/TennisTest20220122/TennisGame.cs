@@ -14,12 +14,14 @@ namespace TennisTest20220122
             { 3, "Forty" },
         };
 
+        private readonly string _secondPlayerName;
         private int _firstPlayerScoreTimes;
         private int _secondPlayerScoreTimes;
 
-        public TennisGame(string firstPlayerName)
+        public TennisGame(string firstPlayerName, string secondPlayerName)
         {
             _firstPlayerName = firstPlayerName;
+            _secondPlayerName = secondPlayerName;
         }
 
         public void FirstPlayerScore()
