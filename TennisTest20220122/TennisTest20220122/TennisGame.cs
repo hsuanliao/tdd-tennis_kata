@@ -21,7 +21,7 @@ namespace TennisTest20220122
 
         public string ScoreResult()
         {
-            if (_secondPlayerScoreTimes == 1)
+            if (_secondPlayerScoreTimes > 0)
             {
                 return $"Love {_scoreLookup[_secondPlayerScoreTimes]}";
             }
