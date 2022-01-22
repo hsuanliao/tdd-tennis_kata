@@ -2,13 +2,20 @@
 {
     public class TennisGame
     {
+        private int _firstPlayerScoreTimes;
+
         public void FirstPlayerScore()
         {
-            throw new System.NotImplementedException();
+            _firstPlayerScoreTimes++;
         }
 
         public string ScoreResult()
         {
+            if (_firstPlayerScoreTimes == 1)
+            {
+                return "Fifteen Love";
+            }
+
             return "Love All";
         }
     }
