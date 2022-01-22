@@ -78,6 +78,14 @@ namespace TennisTest20220122
             ScoreResultShouldBe("Thirty All");
         }
 
+        [Test]
+        public void A10_Deuce_3vs3()
+        {
+            GivenFirstPlayerScoreTimes(3);
+            GivenSecondPlayerScoreTimes(3);
+            ScoreResultShouldBe("Deuce");
+        }
+
         private void GivenFirstPlayerScoreTimes(int times)
         {
             for (var i = 0; i < times; i++)
