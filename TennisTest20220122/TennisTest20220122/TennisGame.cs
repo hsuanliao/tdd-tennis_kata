@@ -4,7 +4,7 @@
     {
         public string ScoreResult()
         {
-            throw new System.NotImplementedException();
+            return "Love All";
         }
     }
 }
