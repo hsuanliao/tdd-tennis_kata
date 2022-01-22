@@ -27,9 +27,9 @@ namespace TennisTest20220122
                 return LookupScore();
             }
 
-            if (_firstPlayerScoreTimes >= 3)
+            if (IsDeuce())
             {
-                return "Deuce";
+                return Deuce();
             }
             return SameScore();
         }
@@ -37,6 +37,17 @@ namespace TennisTest20220122
         public void SecondPlayerScore()
         {
             _secondPlayerScoreTimes++;
+        }
+
+        private static string Deuce()
+        {
+            return "Deuce";
+        }
+
+        private bool IsDeuce()
+        {
+            return _firstPlayerScoreTimes == _secondPlayerScoreTimes
+                   && _firstPlayerScoreTimes >= 3;
         }
 
         private bool IsDifferentScore()
