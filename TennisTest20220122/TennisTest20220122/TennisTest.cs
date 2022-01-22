@@ -110,6 +110,14 @@ namespace TennisTest20220122
             ScoreResultShouldBe("Kevin Adv.");
         }
 
+        [Test]
+        public void A14_FirstPlayer_Win()
+        {
+            GivenDeuce();
+            GivenFirstPlayerScoreTimes(2);
+            ScoreResultShouldBe("Jay Win.");
+        }
+
         private void GivenDeuce()
         {
             GivenFirstPlayerScoreTimes(3);
